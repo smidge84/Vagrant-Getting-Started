@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.define "test-ubuntu" do |ubuntu|
+    ubuntu.vm.box = "bento/ubuntu-24.04"
+    ubuntu.vm.hostname =  "ubuntu"
+    ubuntu.vm.provider "vmware_fusion" do |v|
+      v.vmx["displayname"] = "Ubuntu 24.04"
+      v.vmx["memsize"] = "4096"
+      v.vmx["numvcpus"] = "2"
+    end
+  end
+end
