@@ -12,3 +12,6 @@ apt-get ${apt_opts} upgrade
 
 echo ">> Installing Bat package"
 apt-get ${apt_opts} install bat
+
+echo "## Removing Any Deprecated Packages ##"
+apt-get ${apt_opts} autoremove
