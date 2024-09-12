@@ -11,6 +11,7 @@ Vagrant.configure("2") do |config|
       v.vmx["numvcpus"] = "2"
     end
 
+    ubuntu.vm.provision "shell", name: "time", privileged: true, run: "always", path: "files/time_sync.sh"
     ubuntu.vm.provision "shell", name: "apt", privileged: true, reboot: true, path: "files/install_packages.sh"
 
   end
