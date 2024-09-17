@@ -14,11 +14,12 @@ Vagrant.configure("2") do |config|
     end
 
     # Provider for Parallels on Mac
-    ubuntu.vm.provider "parallels" do |prl|
+    ubuntu.vm.provider "parallels" do |prl, override|
       prl.name = "Ubuntu 24.04"
       prl.update_guest_tools = true
       prl.memory = 4096
       prl.cpus = 2
+      override.vm.network "private_network", ip: "192.168.50.4"
     end
 
     ubuntu.vm.provision "shell", name: "time", privileged: true, run: "always", path: "files/time_sync.sh"
