@@ -16,6 +16,7 @@ Things to work on to expand this example.
   - No, since the move to the M series chips, this is not possible with VMWare
 - To be able to enable Vagrant to create private networks and assign static IPs we need to use a different hypervisor
   - Try Parallels
+    - YES! Parallels is capable of creating private networks and assigning static IPs. These IPs are also reachable from the host system.
   - Try QEMU
 - Implement Ansible provisioner but working with my Ansible Docker container
   - See how Miko setup Scalable Vagrant
