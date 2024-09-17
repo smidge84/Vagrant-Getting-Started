@@ -5,10 +5,20 @@ Vagrant.configure("2") do |config|
   config.vm.define "test-ubuntu" do |ubuntu|
     ubuntu.vm.box = "bento/ubuntu-24.04"
     ubuntu.vm.hostname =  "ubuntu"
+
+    # Provider for VMWare on Mac
     ubuntu.vm.provider "vmware_fusion" do |v|
       v.vmx["displayname"] = "Ubuntu 24.04"
       v.vmx["memsize"] = "4096"
       v.vmx["numvcpus"] = "2"
+    end
+
+    # Provider for Parallels on Mac
+    ubuntu.vm.provider "parallels" do |prl|
+      prl.name = "Ubuntu 24.04"
+      prl.update_guest_tools = true
+      prl.memory = 4096
+      prl.cpus = 2
     end
 
     ubuntu.vm.provision "shell", name: "time", privileged: true, run: "always", path: "files/time_sync.sh"
