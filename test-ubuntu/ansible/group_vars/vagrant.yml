@@ -1,0 +1,6 @@
+---
+# This should be a list of VMs which can define various attribute of the VM, but most importantly it should cover the private network IPs on which Ansible will be able to reach teh remote host
+vms:
+  - name: test-ubuntu
+    ip:
+      - 192.168.50.4

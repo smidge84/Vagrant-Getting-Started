@@ -1,0 +1,1 @@
+docker container run --rm -i --net=host --env ANSIBLE_FORCE_COLOR=true --entrypoint="ansible-playbook" ${BIND_SSH_KEY} -v "$(pwd)":/ansible/playbooks ${ANSIBLE_REPO_URL:=n0sn1b0r/ansible-docker}:${ANSIBLE_IMAGE_VERSION:=10.1.0} $@
