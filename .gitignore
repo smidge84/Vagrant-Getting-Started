@@ -4,6 +4,8 @@
 ### Vagrant ###
 # General
 **/.vagrant/
+# Ignore a file into which we can dump the SSH config Vagrant is using. This can help us connect to managed VMs quicker than using teh "vagrant ssh" command.
+**/vagrant-ssh-config
 
 # Log files (if you are creating logs in debug mode, uncomment this)
 # *.log
